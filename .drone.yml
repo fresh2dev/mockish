@@ -2,10 +2,13 @@ kind: template
 load: hostbutter.jsonnet
 data:
   domains: >-
-    ["lokalhost.net"]
+    ["lokalhost.net", "fresh2.dev"]
   domainTriggers: >-
     {
-      "lokalhost.net": {}
+      "lokalhost.net": {},
+      "fresh2.dev": {
+        "ref": ["refs/heads/main", "refs/tags/*"]
+      }
     }
   domainClusterMap: >-
     {}
@@ -22,7 +25,7 @@ data:
     [
       {
         "name": "py-test",
-        "image": "registry.lokalhost.net/fresh2dev/myke:308a2a7",
+        "image": "registry.lokalhost.net/fresh2dev/myke:2a4e226",
         "commands": [
           "myke py-requirements",
           "myke py-reports",
@@ -36,7 +39,7 @@ data:
     [
       {
         "name": "py-build-package",
-        "image": "registry.lokalhost.net/fresh2dev/myke:308a2a7",
+        "image": "registry.lokalhost.net/fresh2dev/myke:2a4e226",
         "environment": {
           "PYPI_CREDS": {"from_secret": "PYPI_CREDS"}
         },
@@ -50,7 +53,7 @@ data:
       },
       {
         "name": "py-publish-sandbox",
-        "image": "registry.lokalhost.net/fresh2dev/myke:308a2a7",
+        "image": "registry.lokalhost.net/fresh2dev/myke:2a4e226",
         "environment": {
           "PYPI_CREDS": {"from_secret": "PYPI_CREDS"},
           "TWINE_CERT": "/etc/ssl/certs/ca-certificates.crt"
@@ -64,7 +67,7 @@ data:
       },
       {
         "name": "py-publish-dev",
-        "image": "registry.lokalhost.net/fresh2dev/myke:308a2a7",
+        "image": "registry.lokalhost.net/fresh2dev/myke:2a4e226",
         "environment": {
           "PYPI_CREDS": {"from_secret": "PYPI_CREDS"},
           "TWINE_CERT": "/etc/ssl/certs/ca-certificates.crt"
@@ -80,7 +83,7 @@ data:
       },
       {
         "name": "py-publish-test",
-        "image": "registry.lokalhost.net/fresh2dev/myke:308a2a7",
+        "image": "registry.lokalhost.net/fresh2dev/myke:2a4e226",
         "environment": {
           "PYPI_CREDS": {"from_secret": "PYPI_CREDS"},
           "TWINE_CERT": "/etc/ssl/certs/ca-certificates.crt"
@@ -96,7 +99,7 @@ data:
       },
       {
         "name": "py-publish-prod",
-        "image": "registry.lokalhost.net/fresh2dev/myke:308a2a7",
+        "image": "registry.lokalhost.net/fresh2dev/myke:2a4e226",
         "environment": {
           "PYPI_CREDS": {"from_secret": "PYPI_CREDS"},
           "TWINE_CERT": "/etc/ssl/certs/ca-certificates.crt"

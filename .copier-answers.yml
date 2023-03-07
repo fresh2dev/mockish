@@ -1,5 +1,5 @@
 # Changes here will be overwritten by Copier
-_commit: 53a5901
+_commit: 400de4d
 _src_path: https://codeberg.org/Fresh2dev/copier-f2dv-project.git
 author_email: hello@Fresh2.dev
 author_name: Donald Mellenbruch
@@ -15,4 +15,4 @@ project_description: A thin layer of sugar atop Python's mock.
 project_name: mockish
 python_version: '3.7'
 repo_mirror: https://www.Fresh2.dev/code/r/mockish
-repo_url: https://github.com/fresh2dev/mockish
+repo_url: https://www.github.com/fresh2dev/mockish

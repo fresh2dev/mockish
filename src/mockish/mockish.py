@@ -89,6 +89,9 @@ def Mock(
         : A `Mock` object
 
     Examples:
+        *Import*
+        >>> from mockish import Mock
+
         - `return_value`
         >>> obj = Mock(return_value='hello world')
         >>> obj()
@@ -149,7 +152,7 @@ def AsyncMock(
     return_exception: Optional[Exception] = None,
     **kwargs: Any,
 ) -> mock.Mock:
-    """Same as `mockish.Mock`, but returns an async `Mock`.
+    """Same as `mockish.Mock`, but returns an *async* `Mock`.
 
     Returns:
         : An async `Mock` object
@@ -166,18 +169,18 @@ def AsyncMock(
 
 
 def patch_fastapi_dependencies(
-    *args: Any,
+    *args: "FastAPI",
     overrides: Optional[Dict[Callable[..., Any], Callable[..., Any]]],
     remove: bool = False,
 ) -> None:
-    """Recursively patch dependencies of FastAPI instance(s).
+    """Recursively patch dependencies of `FastAPI` instance(s).
 
     [Read about FastAPI test dependencies.](https://fastapi.tiangolo.com/advanced/testing-dependencies/)
     > Note: `fastapi` must be installed.
 
     Args:
-        *args: One or more FastAPI instances
-        overrides: A mapping of overrides, or `None` to clear all
+        *args: FastAPI instance(s) to patch
+        overrides: A mapping of overrides, or `None` to remove all
         remove: Remove the provided overrides
 
     Raises:

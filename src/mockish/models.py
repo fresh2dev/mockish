@@ -70,12 +70,12 @@ class Response(ABC):
         )
 
     @classmethod
-    def create(cls: type[T], data: ResponseData) -> T:
+    def _create(cls: type[T], data: ResponseData) -> T:
         return cls(_data=data)
 
     @classmethod
     def from_dict(cls: type[T], content: dict[str, Any], **kwargs: Any) -> T:
-        return cls.create(
+        return cls._create(
             cls._prepare_response_data(
                 content=json.dumps(content, ensure_ascii=False),
                 content_type="application/json",
@@ -86,7 +86,7 @@ class Response(ABC):
     @classmethod
     def from_file(cls: type[T], path: str, encoding: str = "utf-8", **kwargs: Any) -> T:
         with open(path, encoding=encoding) as f:
-            return cls.create(
+            return cls._create(
                 cls._prepare_response_data(
                     content=f.read(),
                     content_type=(
