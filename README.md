@@ -18,7 +18,6 @@
 [![GitHub pull requests](https://img.shields.io/github/issues-pr-raw/fresh2dev/mockish?color=blue&style=for-the-badge)](https://www.github.com/fresh2dev/mockish/pulls)
 [![GitHub Repo stars](https://img.shields.io/github/stars/fresh2dev/mockish?color=blue&style=for-the-badge)](https://star-history.com/#fresh2dev/mockish&Date)
 [![PyPI - Downloads](https://img.shields.io/pypi/dm/mockish?color=blue&style=for-the-badge)](https://pypi.org/project/mockish)
-[![Docker Pulls](https://img.shields.io/docker/pulls/fresh2dev/mockish?color=blue&style=for-the-badge)](https://hub.docker.com/r/fresh2dev/mockish)
 [![Docs Website](https://img.shields.io/website?down_message=unavailable&label=docs&style=for-the-badge&up_color=blue&up_message=available&url=https://www.Fresh2.dev/code/r/mockish/i)](https://www.Fresh2.dev/code/r/mockish/i)
 [![Coverage Website](https://img.shields.io/website?down_message=unavailable&label=coverage&style=for-the-badge&up_color=blue&up_message=available&url=https://www.Fresh2.dev/code/r/mockish/i/tests/coverage)](https://www.Fresh2.dev/code/r/mockish/i/tests/coverage)
 [![Funding](https://img.shields.io/badge/funding-%24%24%24-blue?style=for-the-badge)](https://www.Fresh2.dev/funding)
@@ -61,35 +60,34 @@ pip install mockish
 Complete example of mocking a HTTP response:
 
 ```py
->>> from mockish import Mock, patch
->>> from mockish.requests import Response
->>> import requests
+from mockish import Mock, patch
+from mockish.requests import Response
+import requests
 
->>> mock_resp = Response.from_dict({'hello': 'world'})
+mock_resp = Response.from_dict({'hello': 'world'})
 
->>> with patch.object(
-...     requests,
-...     'get',
-...     Mock(return_once=mock_resp)
-... ):
-...     resp: requests.Response = requests.get('https://www.fresh2.dev')
-...     requests.get.assert_called_once()
+with patch.object(
+    requests,
+    'get',
+    Mock(return_once=mock_resp)
+):
+    resp: requests.Response = requests.get('https://www.fresh2.dev')
 
->>> resp
-<Response [200]>
+    requests.get.assert_called_once()
 
->>> resp.json()
-{'hello': 'world'}
+print(resp)
+> <Response [200]>
+
+print(resp.json())
+> {'hello': 'world'}
 ```
 
 See the reference docs for more examples:
 
-- [mockish.Mock](reference/01)
-- [mockish.httpx.Response](reference/02)
-- [mockish.requests.Response](reference/03)
+- [mockish.Mock](https://www.Fresh2.dev/code/r/mockish/i/reference/01)
+- [mockish.httpx.Response](https://www.Fresh2.dev/code/r/mockish/i/reference/02)
+- [mockish.requests.Response](https://www.Fresh2.dev/code/r/mockish/i/reference/03)
 
 ## Support
 
 If this project delivers value to you, please [provide feedback](https://github.com/fresh2dev/mockish/issues), code contributions, and/or [funding](https://www.Fresh2.dev/funding).
-
-See my other projects @ https://www.Fresh2.dev/code/r
