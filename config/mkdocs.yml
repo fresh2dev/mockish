@@ -2,8 +2,8 @@ site_name: "mockish"
 site_description: "mockish Docs"
 site_url: !ENV [MKDOCS_SITE_URL, "https://www.Fresh2.dev/code/r/mockish/i"]
 repo_url: "https://www.github.com/fresh2dev/mockish"
-#repo_name: "Gitea"
-#edit_uri: "edit/main/docs"
+repo_name: "fresh2dev/mockish"
+edit_uri: "edit/main/docs"
 #edit_uri_template: "src/branch/main/docs/{path}"
 docs_dir: "../docs"
 site_dir: "../public"
@@ -18,9 +18,9 @@ extra:
 
 ## https://www.mkdocs.org/user-guide/writing-your-docs/#configure-pages-and-navigation
 nav:
-  - Home: README.md
-  - Changelog: CHANGELOG.md
-  - License: LICENSE.md
+  - Home: index.md
+  - Changelog: changelog.md
+  - License: license.md
   - Reference: reference/
 
 watch:
