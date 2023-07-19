@@ -1,8 +1,6 @@
 from typing import Any, Callable, Dict, Optional, Sequence
 from unittest import mock
 
-from pydantic import validate_arguments
-
 __all__ = [
     "Mock",
     "AsyncMock",
@@ -19,7 +17,6 @@ class _AsyncMock(mock.Mock):
         return super().__call__(*args, **kwargs)
 
 
-@validate_arguments(config={"arbitrary_types_allowed": True})
 def _build_mock(
     *,
     is_async: bool,

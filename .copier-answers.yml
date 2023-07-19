@@ -1,20 +1,21 @@
 # Changes here will be overwritten by Copier
-_commit: ec80fd4
+_commit: 4e4ff8b
 _src_path: https://codeberg.org/Fresh2dev/copier-f2dv-project.git
-author_email: hello@Fresh2.dev
+author_email: hello@f2dv.com
 author_name: Donald Mellenbruch
 ci_domain_name: lokalhost.net
-docs_url: https://www.Fresh2.dev/code/r/mockish/i
-funding_url: https://www.Fresh2.dev/funding
-home_page: https://www.Fresh2.dev
+docs_url: https://www.f2dv.com/code/r/mockish/i
+funding_url: https://www.f2dv.com/fund
+home_domain: f2dv.com
+home_page: https://www.f2dv.com
 is_minimal: false
 is_python: true
 license_type: GPLv3
 package_name: mockish
 project_description: A thin layer of sugar atop Python's mock.
 project_name: mockish
-python_version: 3.7
-repo_mirror: https://www.Fresh2.dev/code/r/mockish
+python_version: '3.7'
+repo_mirror: https://www.f2dv.com/code/r/mockish
 repo_name: fresh2dev/mockish
 repo_owner: fresh2dev
 repo_url: https://www.github.com/fresh2dev/mockish
