@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "mockish"
 authors = [
-    {name = "Donald Mellenbruch", email = "hello@Fresh2.dev"},
+    {name = "Donald Mellenbruch", email = "hello@f2dv.com"},
 ]
 description = "A thin layer of sugar atop Python's mock."
 readme = "README.md"
@@ -57,9 +57,9 @@ tests = [
 ]
 
 [project.urls]
-Homepage = "https://www.Fresh2.dev/code/r/mockish/i"
+Homepage = "https://www.f2dv.com/r/mockish"
 Repository = "https://www.github.com/fresh2dev/mockish"
-Funding = "https://www.Fresh2.dev/funding"
+Funding = "https://www.f2dv.com/fund"
 
 [project.scripts]
 mockish = "mockish.__main__:main"
